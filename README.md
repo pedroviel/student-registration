@@ -1,8 +1,9 @@
-# Sistema de cadastro
+# Student Registration
 
-API Rest desenvolvida por meio de um CRUD simples, onde é possível criar alunos, indicando o seu curso, e cada um tem sua matricula própria gerada como ID no ato de criação.
+A Rest API developed as a simple CRUD application, allowing you to create students, assigning their course, 
+and each one has an ID, generated when created.
 
-## Tecnologias utilizadas
+## Technologies
 
 - Java
 - Spring / Spring Boot
@@ -10,29 +11,29 @@ API Rest desenvolvida por meio de um CRUD simples, onde é possível criar aluno
 - Lombok
 - Maven
 
-## Como executar
+## How to execute
 
-Como é utilizado o H2 Database, o projeto não necessita de um banco de dados externo.
+This project uses an in-memory H2 Database, which means no external database is needed.
 
-1 - Clonar esse repositório \
-2 - Abra na sua IDE \
-3 - Atualize as dependências Maven \
-4 - Execute SistemaDeCadastroApplication.java
+1. Clone this repository
+2. Open the project in your IDE
+3. Reload the Maven dependencies
+4. Run `StudentRegistrationApplication.java`
 
-Ao executar a API estará rodando localmente em localhost:8080.
+Once started, the API will be available at http://localhost:8080.
 
-## Endpoints da API
+## Endpoints
 
-Você poderá testar todas a s requisições em ferramentas como Postman.
+You can test all the endpoints with tools like Postman.
 
-* `POST /cadastros` Cadastrar um novo aluno.
-* `GET /cadastros?cursoAluno={curso}` Listar alunos pelo curso.
-* `GET /cadastros/{uuid}` Buscar aluno pela sua matrícula.
-* `PUT /cadastros?nomeAluno={nome}&cursoAluno={curso}` Alterar o cadastro do aluno.
-* `DELETE /cadastros?matriculaAluno={uuid}`  Deletar um aluno com sua matrícula como parâmetro.
+* `POST /students` Create a new student.
+* `GET /students?course={course}` List students by course.
+* `GET /students/{uuid}` Find a student by ID.
+* `PUT /students?name={name}&course={course}` Update student details.
+* `DELETE /students?id={uuid}`  Delete a student by ID.
 
-## Exemplo de payload para o POST
+## Payload example for POST
 
 ````
-{"nomeAluno": "Pedro", "cursoAluno": "Engenharia"}
+{"name": "Pedro", "course": "Engenharia"}
 ````
