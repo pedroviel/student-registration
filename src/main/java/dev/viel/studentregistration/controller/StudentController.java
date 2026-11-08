@@ -31,6 +31,7 @@ public class StudentController {
 
     @DeleteMapping
     public ResponseEntity<Void> deleteStudent(@RequestParam UUID id) {
+
         studentService.deleteStudent(id);
         return ResponseEntity.noContent().build();
     }
